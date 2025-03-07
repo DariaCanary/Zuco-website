@@ -1,5 +1,3 @@
-# Подсчитаем количество строк в коде
-html_code = """
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -7,71 +5,12 @@ html_code = """
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Зуко</title>
     <style>
-        /* Основные стили для страницы */
-        body {
-            font-family: "Georgia", serif;
-            text-align: center;
-            background-color: #fdf6e3;
-            background-image: url('background-image.jpg'); /* Замените на свой путь к изображению */
-            background-size: cover;
-            background-position: center;
-            margin: 0;
-        }
-        .container {
-            max-width: 600px;
-            margin: auto;
-            padding: 20px;
-        }
-        img {
-            width: 100%;
-            max-width: 300px;
-            border-radius: 10px;
-        }
-        h1 {
-            font-size: 40px;
-            color: #ff9f68;
-        }
-        p {
-            font-size: 24px;
-            color: #555;
-        }
+        body { font-family: "Georgia", serif; text-align: center; background-color: #fdf6e3; margin: 0; padding: 0; }
+        .container { max-width: 1000px; margin: auto; padding: 20px; }
+        img { width: auto; height: 100%; max-width: 300px; border-radius: 10px; }
+        h1 { font-size: 40px; }
+        p { font-size: 24px; line-height: 1.6; }
 
-        /* Стиль для навигационного меню */
-        nav {
-            background-color: rgba(255, 159, 104, 0.8);
-            padding: 10px 0;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-        }
-
-        nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
-            padding: 8px 15px;
-            background-color: #ff7b38;
-            border-radius: 50px;
-        }
-
-        nav ul li a:hover {
-            background-color: #ff9f68;
-        }
-
-        /* Стиль для "Оранжевого блока" */
         .orange-box {
             background-color: #f8a05c;
             padding: 20px;
@@ -80,19 +19,9 @@ html_code = """
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        /* Анимация для появления элементов */
-        .hidden {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease-in-out;
-        }
+        .hidden { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-in-out; }
+        .show { opacity: 1; transform: translateY(0); }
 
-        .show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Стили для кнопок */
         a {
             display: inline-block;
             background-color: #ff9f68;
@@ -102,64 +31,87 @@ html_code = """
             text-decoration: none;
             font-weight: bold;
             border-radius: 50px;
-            transition: background-color 0.3s;
         }
 
         a:hover {
             background-color: #ff7b38;
         }
 
-        /* Адаптивный дизайн для мобильных устройств */
+        /* Новый блок с картой и текстом */
+        .card-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+
+        .card-text {
+            width: 60%;
+            text-align: left;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .card-image {
+            width: 35%;
+            text-align: center;
+        }
+
+        .card-image img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
         @media (max-width: 768px) {
-            h1 {
-                font-size: 30px;
+            .card-container {
+                flex-direction: column;
+                align-items: center;
             }
 
-            p {
-                font-size: 18px;
-            }
-
-            .orange-box {
-                margin-top: 10px;
-            }
-
-            .container {
-                padding: 15px;
-            }
-
-            nav ul li {
-                display: block;
-                margin: 10px 0;
+            .card-text, .card-image {
+                width: 100%;
+                text-align: center;
             }
         }
+
     </style>
 </head>
 <body>
-    <!-- Навигационное меню -->
-    <nav>
-        <ul>
-            <li><a href="index.html">Главная</a></li>
-            <li><a href="about.html">О Зуко</a></li>
-            <li><a href="quotes.html">Цитаты</a></li>
-            <li><a href="facts.html">Факты</a></li>
-        </ul>
-    </nav>
-
-    <!-- Контейнер с контентом страницы -->
     <div class="container">
         <h1 class="hidden">Зуко</h1>
-        <img src="Канарейка.png" alt="Канарейка Зуко" class="hidden">
-        <p class="hidden">Меня зовут Зуко, я наследник престола народа Канареек.</p>
-        
-        <div class="orange-box hidden">
-            <p>Цитаты и полезные инсайты от Зуко</p>
+        <div class="card-container">
+            <div class="card-text">
+                <p class="hidden">Меня зовут Зуко, я наследник престола народа Канареек.</p>
+                <div class="orange-box hidden">
+                    <p>Цитаты и полезные инсайты от Зуко:</p>
+                    <p>"Смело иду туда, куда мне нужно, несмотря на трудности."</p>
+                </div>
+            </div>
+            <div class="card-image">
+                <img src="Канарейка.png" alt="Канарейка Зуко" class="hidden">
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card-text">
+                <p><strong>Трепещительная</strong><br>
+                    Для тех, кто готов рисковать на каждом шагу. Ваши финансы никогда не будут в безопасности!
+                </p>
+                <p><strong>Запутано и Нервозно</strong><br>
+                    Каждый платеж — интрига! Неожиданные комиссии.
+                </p>
+                <p><strong>РОАД МАПА</strong><br>
+                    Рискнуть
+                </p>
+            </div>
+            <div class="card-image">
+                <img src="path_to_image.jpg" alt="Фотография рисков" class="hidden">
+            </div>
         </div>
 
         <a href="about.html">Узнать больше</a>
         <a href="quotes.html">Цитаты</a>
     </div>
 
-    <!-- Скрипт для анимации появления -->
     <script>
         const hiddenElements = document.querySelectorAll('.hidden');
         const observer = new IntersectionObserver(entries => {
@@ -173,3 +125,4 @@ html_code = """
     </script>
 </body>
 </html>
+
