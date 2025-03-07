@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Зуко</title>
     <style>
-        body { font-family: "Georgia", serif; text-align: center; background-color: #fdf6e3; margin: 0; padding: 0; }
-        .container { max-width: 1000px; margin: auto; padding: 20px; }
-        img { width: auto; height: 100%; max-width: 300px; border-radius: 10px; }
+        body { font-family: "Georgia", serif; text-align: center; background-color: #fdf6e3; }
+        .container { max-width: 600px; margin: auto; padding: 20px; }
+        img { width: 100%; max-width: 300px; border-radius: 10px; }
         h1 { font-size: 40px; }
-        p { font-size: 24px; line-height: 1.6; }
-
+        p { font-size: 24px; }
+        
         .orange-box {
             background-color: #f8a05c;
             padding: 20px;
@@ -36,78 +36,22 @@
         a:hover {
             background-color: #ff7b38;
         }
-
-        /* Новый блок с картой и текстом */
-        .card-container {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 30px;
-        }
-
-        .card-text {
-            width: 60%;
-            text-align: left;
-            font-size: 18px;
-            color: #333;
-        }
-
-        .card-image {
-            width: 35%;
-            text-align: center;
-        }
-
-        .card-image img {
-            max-width: 100%;
-            border-radius: 10px;
-        }
-
-        @media (max-width: 768px) {
-            .card-container {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .card-text, .card-image {
-                width: 100%;
-                text-align: center;
-            }
-        }
-
     </style>
 </head>
 <body>
     <div class="container">
         <h1 class="hidden">Зуко</h1>
-        <div class="card-container">
-            <div class="card-text">
-                <p class="hidden">Меня зовут Зуко, я наследник престола народа Канареек.</p>
-                <div class="orange-box hidden">
-                    <p>Цитаты и полезные инсайты от Зуко:</p>
-                    <p>"Смело лучу туда, куда мне нужно, несмотря на трудности и клетку."</p>
-                </div>
-            </div>
-            <div class="card-image">
-                <img src="Канарейка.png" alt="Канарейка." class="hidden">
-            </div>
-        </div>
-
-        <div class="card-container">
-            <div class="card-text">
-                <p><strong>Кенар</strong><br>
-                    Для тех, кто готов смотреть на птиц
-                </p>
-                <p><strong>Запутано и Прикольно</strong><br>
-                    Каждый пост — интрига!
-                </p>
-            
-            </div>
-            <div class="card-image">
-                <img src="path_to_image.jpg" alt="Фотография рисков" class="hidden">
-            </div>
+        <img src="Канарейка.png" alt="Зуко" class="hidden">
+        <p class="hidden">Меня зовут Зуко, я наследник престола народа Канареек.</p>
+        
+        <div class="orange-box hidden">
+            <p>Цитаты и полезные инсайты от Зуко</p>
         </div>
 
         <a href="about.html">Узнать больше</a>
         <a href="quotes.html">Цитаты</a>
+        <a href="reviews.html">Отзывы</a> <!-- Вкладка с отзывами -->
+
     </div>
 
     <script>
