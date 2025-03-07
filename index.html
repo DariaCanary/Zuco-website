@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Зуко</title>
+    <style>
+        body { font-family: "Georgia", serif; text-align: center; background-color: #fdf6e3; }
+        .container { max-width: 600px; margin: auto; padding: 20px; }
+        img { width: 100%; max-width: 300px; border-radius: 10px; }
+        h1 { font-size: 40px; }
+        p { font-size: 24px; }
+        
+        .orange-box {
+            background-color: #f8a05c;
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .hidden { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-in-out; }
+        .show { opacity: 1; transform: translateY(0); }
+
+        a {
+            display: inline-block;
+            background-color: #ff9f68;
+            color: white;
+            padding: 10px 20px;
+            margin-top: 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50px;
+        }
+
+        a:hover {
+            background-color: #ff7b38;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="hidden">Зуко</h1>
+        <img src="Канарейка.png" alt="Канарейка Зуко" class="hidden">
+        <p class="hidden">Меня зовут Зуко, я наследник престола народа Канареек.</p>
+        
+        <div class="orange-box hidden">
+            <p>Цитаты и полезные инсайты от Зуко</p>
+        </div>
+
+        <a href="about.html">Узнать больше</a>
+        <a href="quotes.html">Цитаты</a>
+    </div>
+
+    <script>
+        const hiddenElements = document.querySelectorAll('.hidden');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        });
+        hiddenElements.forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
