@@ -1,3 +1,5 @@
+# Подсчитаем количество строк в коде
+html_code = """
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -5,12 +7,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Зуко</title>
     <style>
-        body { font-family: "Georgia", serif; text-align: center; background-color: #fdf6e3; }
-        .container { max-width: 600px; margin: auto; padding: 20px; }
-        img { width: 100%; max-width: 300px; border-radius: 10px; }
-        h1 { font-size: 40px; }
-        p { font-size: 24px; }
-        
+        /* Основные стили для страницы */
+        body {
+            font-family: "Georgia", serif;
+            text-align: center;
+            background-color: #fdf6e3;
+            background-image: url('background-image.jpg'); /* Замените на свой путь к изображению */
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+        }
+        img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+        }
+        h1 {
+            font-size: 40px;
+            color: #ff9f68;
+        }
+        p {
+            font-size: 24px;
+            color: #555;
+        }
+
+        /* Стиль для навигационного меню */
+        nav {
+            background-color: rgba(255, 159, 104, 0.8);
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            padding: 8px 15px;
+            background-color: #ff7b38;
+            border-radius: 50px;
+        }
+
+        nav ul li a:hover {
+            background-color: #ff9f68;
+        }
+
+        /* Стиль для "Оранжевого блока" */
         .orange-box {
             background-color: #f8a05c;
             padding: 20px;
@@ -19,9 +80,19 @@
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        .hidden { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-in-out; }
-        .show { opacity: 1; transform: translateY(0); }
+        /* Анимация для появления элементов */
+        .hidden {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-in-out;
+        }
 
+        .show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Стили для кнопок */
         a {
             display: inline-block;
             background-color: #ff9f68;
@@ -31,14 +102,50 @@
             text-decoration: none;
             font-weight: bold;
             border-radius: 50px;
+            transition: background-color 0.3s;
         }
 
         a:hover {
             background-color: #ff7b38;
         }
+
+        /* Адаптивный дизайн для мобильных устройств */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 30px;
+            }
+
+            p {
+                font-size: 18px;
+            }
+
+            .orange-box {
+                margin-top: 10px;
+            }
+
+            .container {
+                padding: 15px;
+            }
+
+            nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
+        }
     </style>
 </head>
 <body>
+    <!-- Навигационное меню -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="about.html">О Зуко</a></li>
+            <li><a href="quotes.html">Цитаты</a></li>
+            <li><a href="facts.html">Факты</a></li>
+        </ul>
+    </nav>
+
+    <!-- Контейнер с контентом страницы -->
     <div class="container">
         <h1 class="hidden">Зуко</h1>
         <img src="Канарейка.png" alt="Канарейка Зуко" class="hidden">
@@ -52,6 +159,7 @@
         <a href="quotes.html">Цитаты</a>
     </div>
 
+    <!-- Скрипт для анимации появления -->
     <script>
         const hiddenElements = document.querySelectorAll('.hidden');
         const observer = new IntersectionObserver(entries => {
